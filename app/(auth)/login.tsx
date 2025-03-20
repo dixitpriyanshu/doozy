@@ -21,7 +21,7 @@ const validateEmail = (email: string) => {
   return re.test(email);
 };
 
-export default function SignInScreen() {
+export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -43,6 +43,11 @@ export default function SignInScreen() {
         }
       );
       const data = await response.json();
+      if (response.status !== 200) {
+        alert(data.message);
+        setLoading(false);
+        return;
+      }
       storeData(StorageKeys.JWT, data.token);
       router.dismissAll();
       router.replace("/(authenticated)");
