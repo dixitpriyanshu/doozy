@@ -33,7 +33,7 @@ export default function SignUpScreen() {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://doozy-backend-hntq.onrender.com/auth/signup",
+        "https://doozy-backend.vercel.app/auth/signup",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

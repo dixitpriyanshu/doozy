@@ -32,7 +32,7 @@ export default function LoginScreen() {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://doozy-backend-hntq.onrender.com/auth/login",
+        "https://doozy-backend.vercel.app/auth/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
